@@ -1,2 +1,6 @@
 # touchID
-指纹识别模块
+调用方法
+
+```
+[touchid verifyTouchID:^(BOOL state, NSString *message)
+```

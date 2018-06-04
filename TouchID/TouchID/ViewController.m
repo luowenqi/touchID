@@ -21,7 +21,7 @@
 }
 
 - (IBAction)touchIDVerify:(UIButton *)sender {
-    TouchID* touchid = [TouchID new];
+    TouchID* touchid = [TouchID shared];
     [touchid verifyTouchID:^(BOOL state, NSString *message) {
         NSString* title = @"失败";
         if (state == YES) title = @"成功";

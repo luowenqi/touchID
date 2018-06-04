@@ -10,7 +10,7 @@
 
 @interface TouchID : NSObject
 
-
++(instancetype)shared;
 /**
  验证指纹
 

@@ -12,6 +12,15 @@
 
 @implementation TouchID
 
++(instancetype)shared{
+    static id shared = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        shared = [[TouchID alloc]init];
+    });
+    return shared;
+}
+
 -(void)verifyTouchID:(void(^)(BOOL state, NSString* message))callback{
     __block  BOOL verifyState = NO;
     __block  NSString * verifyMessage = @"";
